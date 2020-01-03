@@ -18,6 +18,5 @@ def page_scraper(pages, headers):
 # scraper driver code
 with open(OUT, 'w') as o:
     for page in page_scraper(page_navigator(MAIN, 20), HEAD):
-        for listing in page:
-            for article in listing.articles:
-                o.write(article.__str__())
+        for article in page.articles:
+            o.write(article.__str__())

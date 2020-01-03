@@ -9,9 +9,5 @@ class Listing_Page():
         self.headers = headers
         self.request = requests.get(self.url, headers=self.headers)
         self.soup = BeautifulSoup(self.request.content, 'html.parser')
-        self.listings = self.soup.find_all('article')
-        self.articles = [Article(article_html) for article_html in self.listings]
-
-    def print_listings(self):
-        for a in self.articles:
-            print(a)
+        self.articles = [Article(article_html) for article_html
+                         in self.soup.find_all('article')]

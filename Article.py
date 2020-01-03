@@ -21,4 +21,4 @@ class Article():
         return (p, f, l)
 
     def get_description(article):
-        return str(article.select('div p')[0])[3:-4]
+        return str(article.select('div p')[0])[3:-4].replace('\n', ' ')
